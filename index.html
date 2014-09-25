@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
+http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd ">
+<html xmlns=" http://www.w3.org/1999/xhtml ">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<link type="text/css" rel="stylesheet"
+href="http://fast.fonts.com/cssapi/6d894756-b42b-43a8-8e2f-dddee93376e2.css"/>
+<title>Syslog Linux-server Avans</title> 
+<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="json-jquery.js" type="text/javascript"></script> 
+<script src="jsonTable.js" type="text/javascript"></script> 
+</head>
+<body>
+<div class="masthead" role="banner" id="aui_3_4_0_1_473" style="position:relative;">
+<table border=0 style="width: 100%; border-color: #fff; border-style none;" >
+	<tr valign=top>
+		<td style="white-space: nowrap; width : 1px;">Host:<br/><input type="text" id="host_text" size=10></td>
+		<td style="white-space: nowrap; width : 1px;">Program:<br/><input type="text" id="program_text" size=10></td>
+		<td style="white-space: nowrap; width : 1px;">Prio:<br/>
+			<SELECT NAME="prio" id="prio">
+				<OPTION VALUE="." SELECTED>All
+				<OPTION VALUE="notice">notice
+				<OPTION VALUE="info">info
+				<OPTION VALUE="warning">warning
+				<OPTION VALUE="err">err
+				<OPTION VALUE="crit">crit
+				<OPTION VALUE="warning|err|crit">Warn+ Err+ Crit
+			</SELECT>		
+		</td>
+		<td style="white-space: nowrap; width : 1px;">Message:<br/><input type="text" id="message_text"></td>
+		<td style="white-space: nowrap; width : 1px;"> Aantal:<br/>
+			<SELECT NAME="aantalresultaten" id="aantalresultaten">
+				<OPTION VALUE="100" SELECTED>100
+				<OPTION VALUE="200">200
+				<OPTION VALUE="300">300
+				<OPTION VALUE="400">400
+				<OPTION VALUE="500">500
+				<OPTION VALUE="600">600
+				<OPTION VALUE="700">700
+				<OPTION VALUE="800">800
+				<OPTION VALUE="900">900
+				<OPTION VALUE="1000">1000
+			</SELECT>		
+		</td>
+		<td style="white-space: nowrap; vertical-align: bottom;"><a href="#" id="getdata-button"><img src="/search-glass.png" width="20px"></a></td>
+		<td style="white-space: nowrap; width : 30px;"><img width=30px src="./ajax-loader.gif" id="loadingImage" style="visibility:hidden"/></td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<img src=/avans.png class="logo_top">
+</div>
+
+<div id="textbox">
+  <div class="alignleft" id="messages" style="visibility:hidden;color:grey;"></div>
+  <div class="alignright" id="stats" style="color:grey;">Getting statistics <img width=10px src="./ajax-loader.gif" id="loadingImageStats"></div>
+</div>
+<div style="padding: 20px 0 15px 0;">
+	<div class="alignleft" id="autoUpdateBox" style="color:grey;">
+		<input type="checkbox" id="autoUpdate" />Auto Update <font size=-2>5 sec.</font>
+	</div>
+</div>
+<table id="dataTable" style="color: black;" width=100%>
+</table>
+</body>
+</html> 
